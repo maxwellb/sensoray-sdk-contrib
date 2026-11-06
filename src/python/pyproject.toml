@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sensoray-sdk-contrib"
+dynamic = ["version"]
+description = "ctypes wrapper for the Sensoray 2600 middleware (s2600.dll), with an MSYS2 UCRT64 runtime port"
+readme = "README.md"
+requires-python = ">=3.11"
+# The distribution as a whole combines this project's dual-licensed code with
+# upstream Sensoray SDK material that is not licensed here. See NOTICE.md.
+license = "(AGPL-3.0-only OR GPL-3.0-or-later) AND LicenseRef-Sensoray-2600-SDK"
+license-files = [
+    "LICENSE",
+    "COPYING",
+    "NOTICE.md",
+    "agpl-3.0.txt",
+    "gpl-3.0.txt",
+    "LICENSES/Sensoray-2600-SDK-NOTICE.txt",
+]
+authors = [
+    { name = "Maxwell Bloch", email = "maxwellb@users.noreply.github.com" },
+]
+maintainers = [
+    { name = "Maxwell Bloch", email = "maxwellb@users.noreply.github.com" },
+]
+keywords = ["sensoray", "2600", "2601", "sdk", "ctypes", "iom", "ucrt64"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: System :: Hardware",
+]
+
+[project.urls]
+Homepage = "https://github.com/maxwellb/sensoray-sdk-contrib"
+Repository = "https://github.com/maxwellb/sensoray-sdk-contrib"
+Issues = "https://github.com/maxwellb/sensoray-sdk-contrib/issues"
+Changelog = "https://github.com/maxwellb/sensoray-sdk-contrib/releases"
+
+[project.scripts]
+sensorayd = "sensorayd.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=8", "build"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+# src layout: `sensoray` lives under src/, `sensorayd` is a top-level package.
+pythonpath = ["src", "."]
+
+[tool.hatch.version]
+path = "src/sensoray/__init__.py"
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sensoray", "sensorayd"]
+# Native payloads live in _libs/<platform>/ and are injected by hatch_build.py
+# at the runtime path, one target per wheel. Never ship them wholesale.
+exclude = ["_libs"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "_libs",
+    "LICENSES",
+    "hatch_build.py",
+    "src/sensoray",
+    "sensorayd",
+    "SKILL.md",
+    "README.md",
+    "NOTICE.md",
+    "LICENSE",
+    "pyproject.toml",
+    "uv.lock",
+    "COPYING",
+    "agpl-3.0.txt",
+    "gpl-3.0.txt",
+]

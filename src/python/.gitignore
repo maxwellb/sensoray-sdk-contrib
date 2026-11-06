@@ -1,0 +1,5 @@
+# Python bytecode cache (encompasses *.pyc and *.pyo)
+__pycache__/
+
+# Virtual environment created by uv/pip tools in this package directory.
+.venv/

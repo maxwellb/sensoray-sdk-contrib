@@ -1,0 +1,43 @@
+# Normalize line endings for text files.
+* text=auto
+
+# Explicit text types.
+*.c      text
+*.h      text
+*.py     text
+*.md     text
+*.txt    text
+*.toml   text
+*.json   text
+*.sh     text
+*.cmd    text eol=crlf
+Makefile text eol=lf
+uv.lock  text eol=lf
+COPYING  text
+LICENSE  text
+
+# License texts and notices must stay byte-faithful; never rewrite line endings.
+agpl-3.0.txt text eol=lf
+gpl-3.0.txt  text eol=lf
+NOTICE.md    text eol=lf
+LICENSES/**  text eol=lf
+
+# Upstream Sensoray core: these four files must remain byte-identical to the
+# official SDK archive so they can be re-sourced at any time with zero diff.
+# The archive ships CRLF, so do not normalize or convert them.
+#
+# This rule must come AFTER the *.c / *.h rules above: Git applies the last
+# matching pattern, so an earlier -text would be overridden by them.
+src/common/s26core.c  -text
+src/common/app2600.h  -text
+src/common/s26modf.h  -text
+src/common/tctable.h  -text
+
+# Binaries — do not normalize.
+*.dll    binary
+*.lib    binary
+*.a      binary
+*.exe    binary
+*.so     binary
+*.dylib  binary
+*.pdf    binary

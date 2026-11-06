@@ -1,0 +1,66 @@
+# Licensing — sensoray-sdk-contrib
+
+This repository contains material under **two separate sets of terms**.
+
+## 1. This project's code
+
+Original work by Maxwell Bloch: the Windows (MSYS2 UCRT64 / `x86_64-w64-mingw32`)
+port, the Python package, and future platform ports.
+
+Dual-licensed, at your option, under either:
+
+- **GNU Affero General Public License v3.0 only**, or
+- **GNU General Public License v3.0 or later**.
+
+See [`COPYING`](COPYING) for the election and the statutory notices, and
+[`agpl-3.0.txt`](agpl-3.0.txt) / [`gpl-3.0.txt`](gpl-3.0.txt) for the full texts.
+
+SPDX: `(AGPL-3.0-only OR GPL-3.0-or-later)`
+
+Both options carry an **additional permission** (AGPL-3.0 §7 / GPL-3.0 §7)
+allowing combination of this project's code with the OS-independent Sensoray
+2600 SDK core. See the "Additional permission" section of [`COPYING`](COPYING).
+That permission removes any conflict between this project's copyleft and the
+combination; it grants no rights in the Sensoray material itself.
+
+## 2. Upstream Sensoray 2600 SDK material
+
+The OS-independent core of the Sensoray 2600 middleware — `s26core.c`,
+`app2600.h`, `s26modf.h`, `tctable.h` (the "fundamental four") — is
+**Copyright (C) 2004–2008 Sensoray Co., Inc.**, authored by Jim Lamberson and
+others. It is not original to this project and is not relicensed here.
+
+`src/common/` contains these files unmodified, as shipped in the official SDK
+archive (see [`src/README.md`](src/README.md)). They are committed for build
+convenience only: being present in this repository grants no rights beyond what
+Sensoray's own notices allow, and they may be replaced from the archive at any
+time.
+
+The SDK archive as distributed by Sensoray **contains no license, EULA, or
+copying terms**; the four files carry copyright notices only. This project
+therefore relies on the distribution's own stated intent, which expressly
+contemplates the activities performed here:
+
+- the core "must be included" in projects that use the SDK, and
+- developers "must not modify any files except the three OS-specific source
+  files" — precisely the files adapted by this port.
+
+Those notices are reproduced verbatim in
+[`src/python/LICENSES/Sensoray-2600-SDK-NOTICE.txt`](src/python/LICENSES/Sensoray-2600-SDK-NOTICE.txt),
+and the reasoning is recorded in
+[`adr/0005-upstream-inclusion-not-licensing.md`](adr/0005-upstream-inclusion-not-licensing.md).
+
+### Built binaries
+
+Distributed binaries such as `s2600.dll` are compiled, linked works that combine
+the upstream core with this project's port code. They are **not** offered under
+the AGPL/GPL alone: use of them requires compliance with both Sensoray's terms
+(whatever they may be) and one of the licenses in section 1. See
+[`src/python/NOTICE.md`](src/python/NOTICE.md).
+
+## No affiliation
+
+This is an independent, community-contributed project. It is not affiliated
+with, endorsed by, or sponsored by Sensoray Co., Inc. No trademark rights are
+granted, and no patent license is granted beyond what the licenses above
+provide.

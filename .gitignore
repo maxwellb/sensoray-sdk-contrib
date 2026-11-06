@@ -1,0 +1,18 @@
+# Build artifacts (canonical output directory)
+build/
+
+# NOTE: src/common/ is deliberately NOT ignored — the unmodified upstream SDK
+# core is tracked so a fresh checkout builds without the SDK download. See
+# src/common/README.md and adr/0004-sdk-core-tracked-unmodified.md.
+
+# Python build and test artifacts
+dist/
+*.whl
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Debug symbols next to vendored native payloads
+_libs/**/*.pdb
+_libs/**/*.exp
+_libs/**/*.ilk

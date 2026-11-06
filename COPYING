@@ -1,0 +1,78 @@
+                    sensoray-sdk-contrib — COPYING
+        Community-contributed ports of the Sensoray 2600 middleware SDK
+                        Copyright (C) 2026  Maxwell Bloch
+
+This work is dual-licensed. You may choose to license, copy, distribute, and/or
+modify it under EITHER of the two licenses below, at your option:
+
+  1. the GNU Affero General Public License, version 3 only (see the AGPL-3.0
+     section below, and the full text in agpl-3.0.txt), OR
+  2. the GNU General Public License, version 3 or any later version (see the
+     GPL-3.0 section below, and the full text in gpl-3.0.txt).
+
+The full text of each license is provided in the files agpl-3.0.txt and
+gpl-3.0.txt in this distribution.
+
+The licenses above apply to this project's own code only. Upstream Sensoray 2600
+SDK material remains under its own copyright; see LICENSE and NOTICE.md.
+
+-------------------------------------------------------------------------------
+Additional permission — AGPL-3.0 section 7 / GPL-3.0 section 7
+-------------------------------------------------------------------------------
+
+This project's code is designed to be combined with the OS-independent Sensoray
+2600 SDK core (s26core.c, app2600.h, s26modf.h, tctable.h), which the SDK itself
+states "must be included" in projects that use it.
+
+As an additional permission under section 7 of the GNU Affero General Public
+License version 3 and section 7 of the GNU General Public License version 3, you
+may combine this project's code with that SDK core and distribute the resulting
+combined work, including compiled binaries, provided you comply with whatever
+terms apply to the Sensoray material.
+
+This permission removes any conflict between this project's copyleft and such a
+combination. It grants no rights in the Sensoray material itself, and it does not
+relax any other term of either license with respect to this project's code.
+
+===============================================================================
+
+                    GNU AFFERO GENERAL PUBLIC LICENSE
+                               Option 1
+
+    sensoray-sdk-contrib — Community-contributed ports of the Sensoray 2600
+    middleware SDK
+    Copyright (C) 2026  Maxwell Bloch
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+===============================================================================
+
+                        GNU GENERAL PUBLIC LICENSE
+                               Option 2
+
+    sensoray-sdk-contrib — Community-contributed ports of the Sensoray 2600
+    middleware SDK
+    Copyright (C) 2026  Maxwell Bloch
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

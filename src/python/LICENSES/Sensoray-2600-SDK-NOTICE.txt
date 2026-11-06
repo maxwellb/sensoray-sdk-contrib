@@ -1,0 +1,99 @@
+Sensoray 2600 SDK — upstream copyright notices
+==============================================
+
+The files listed below are part of the OS-independent core of the Sensoray 2600
+middleware SDK. They are NOT original to sensoray-sdk-contrib, are NOT
+relicensed by it, and remain Copyright (C) Sensoray Co., Inc.
+
+They are committed to this repository unmodified, as shipped in the official SDK
+archive. They may be re-sourced from that archive at any time with zero diff (see
+src/common/README.md). Being present in the repository grants no rights beyond
+what these notices allow.
+
+    https://www.sensoray.com/downloads/sdk_2600_1.1.18.zip
+
+The SDK archive as distributed by Sensoray contains no license, EULA, or copying
+terms. The files carry copyright notices only. Those notices are reproduced
+verbatim below, unmodified, in accordance with the attribution the notices
+themselves request.
+
+For the reasoning behind this project's use and redistribution of these files,
+see NOTICE.md and adr/0005-upstream-inclusion-not-licensing.md.
+
+
+------------------------------------------------------------------------------
+s26core.c
+------------------------------------------------------------------------------
+/******************************************************************************************
+Module    : s26core.c
+Function  : Platform-independent middleware core for Sensoray 2600 system.
+Author    : Jim Lamberson
+Copyright : Copyright (C) 2008 Sensoray.
+
+One of these preprocessor definitions must be declared to specify cpu endianness:
+ENDIAN_LITTLE, ENDIAN_BIG
+
+This code module:
+*   Constitutes the bulk of a comprehensive API for Sensoray's 2600 family.
+*   Encapsulates all of the communication protocols required to communicate with
+     a Sensoray 2600 I/O system. Public functions are exposed directly to application
+     programs as API calls.
+*   Is designed to work with any operating system or cpu. There are no references
+     to any particular operating system (e.g., "#ifdef _WINDOZE_").
+     PLEASE KEEP IT THAT WAY!
+     Don't pollute this file with OS or CPU dependencies.
+*   Depends on OS-specific code that must be supplied by these external files:
+     s26app.h - Declarations shared by app/mod/core.
+     s26mod.h - Declarations shared by mod/core.
+     s26mod.c - System interface functions needed by the core.
+     Your project must include these files, either by setting the include path or by
+     collecting all necessary files together in one location. See the linux project
+     for clues about implementing these files for other operating systems.
+
+If you plan to develop your own API:
+*   Don't modify any files except the three 0S-specific source files mentioned above.
+     The core and other OS-independent source files are designed to work with any operating
+     system and with any cpu, WITHOUT MODIFICATION.
+*   Good luck! Sensoray has provided you with the foundation code (including a complete
+     linux implementation) but Sensoray DOES NOT PROVIDE SUPPORT for customization of the code.
+     We will be happy to quote a fee for porting the API to another operating system or cpu.
+*******************************************************************************************/
+
+
+------------------------------------------------------------------------------
+app2600.h
+------------------------------------------------------------------------------
+//////////////////////////////////////////////////////////////////////////////////
+// Module    : App2600.h
+// Function  : Header file for Sensoray 2600 applications
+// Target OS : Any (OS independent)
+// Usage     : Included by all apps using 2600 boards
+// Copyright : (C) 2008 Sensoray
+//////////////////////////////////////////////////////////////////////////////////
+
+
+------------------------------------------------------------------------------
+s26modf.h
+------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Module    : s26modf.h
+// Function  : Definitions shared by s26mod.c and s26core.c
+// Target OS : Any (operating system independent)
+// Author    : Jim Lamberson
+// Copyright : (C) 2008 Sensoray
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+------------------------------------------------------------------------------
+tctable.h
+------------------------------------------------------------------------------
+/************************ tctbles.c ******************************
+* This automatically generated file contains calibration tables
+* for thermocouple types b, c, e, j, k, n, r, s and t.
+* Copyright (C) Sensoray Company 2004
+*****************************************************************/
+
+
+------------------------------------------------------------------------------
+End of upstream notices.
+------------------------------------------------------------------------------

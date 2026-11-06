@@ -1,0 +1,33 @@
+# Licensing — sensoray-sdk-contrib (Python package)
+
+This package contains material under **two separate sets of terms**. Full
+details in [`NOTICE.md`](NOTICE.md).
+
+## 1. This project's code
+
+Original work by Maxwell Bloch. Dual-licensed, at your option, under either:
+
+- **GNU Affero General Public License v3.0 only**, or
+- **GNU General Public License v3.0 or later**.
+
+See [`COPYING`](COPYING) for the election and the §7 additional permission, and
+[`agpl-3.0.txt`](agpl-3.0.txt) / [`gpl-3.0.txt`](gpl-3.0.txt) for the full texts.
+
+SPDX: `(AGPL-3.0-only OR GPL-3.0-or-later)`
+
+## 2. Upstream Sensoray 2600 SDK core
+
+`s26core.c`, `app2600.h`, `s26modf.h`, `tctable.h` are **Copyright (C) Sensoray
+Co., Inc.** (2004–2008) and are not licensed here. Verbatim notices:
+[`LICENSES/Sensoray-2600-SDK-NOTICE.txt`](LICENSES/Sensoray-2600-SDK-NOTICE.txt).
+
+## 3. The bundled binary
+
+`sensoray/s2600/lib/s2600.dll` is a combined work of sections 1 and 2. Use of it
+requires compliance with both Sensoray's terms and one of the licenses in
+section 1.
+
+## No affiliation
+
+Independent community project. Not affiliated with, endorsed by, or sponsored by
+Sensoray Co., Inc.
